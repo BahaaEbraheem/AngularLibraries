@@ -3,7 +3,7 @@ export class Book {
   Title!:string;
   TotalPages!:number
   Price!:Float32Array;
-  PublishedDate!:Date;
+  PublishedDate!:Date ;
   AuthorName!:string;
       Language!:string;
       CreatedOn!:Date;

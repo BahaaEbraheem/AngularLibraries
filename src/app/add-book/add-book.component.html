@@ -1,0 +1,27 @@
+<form (submit)="submit(form)" #form="ngForm">
+
+ <div class="form-group">
+    <label for="Title">Title:</label>
+    <input type="text" name="Title" class="form-control" [(ngModel)]=" Myservice.book.Title">
+ </div>
+ <div class="form-group">
+    <label for="TotalPages">TotalPages:</label>
+    <input type="number" name="TotalPages" class="form-control" [(ngModel)]="Myservice.book.TotalPages">
+</div><div  class="form-group">
+    <label for="Price">Price:</label>
+    <input type="number" name="Price" class="form-control" [(ngModel)]="Myservice.book.Price">
+</div><div class="form-group">
+    <label for="AuthorName">AuthorName:</label>
+    <input type="text" name="AuthorName" class="form-control" [(ngModel)]="Myservice.book.AuthorName">
+</div>
+<div class="form-group">
+    <label for="Language">Language:</label>
+    <input type="text" name="Language" class="form-control" [(ngModel)]="Myservice.book.Language">
+</div><div class="form-group">
+    <label for="IsDeleted">IsDeleted:</label>
+    <input type="checkbox" name="IsDeleted" [(ngModel)]="Myservice.book.IsDeleted">
+</div>
+<div class="form-group">    <input type="submit" class="btn btn-dark btn-lg" value="Send Data"  >
+</div>
+
+</form>
