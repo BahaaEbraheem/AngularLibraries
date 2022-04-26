@@ -13,7 +13,7 @@ export class AddBookComponent implements OnInit {
 
   constructor(public Myservice:BookService) { }
   ngOnInit() {
-    this.Myservice.book=new Book();
+   
   }
   submit(from: NgForm){
     this.Myservice.AddBook().subscribe(res=>{

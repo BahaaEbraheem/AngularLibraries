@@ -6,12 +6,14 @@ import { BookListComponent } from './book-list/book-list.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddBookComponent } from './add-book/add-book.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
+import { DeleteBookComponent } from './delete-book/delete-book.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BookListComponent,
     AddBookComponent,
+    DeleteBookComponent,
     
   ],
   imports: [
