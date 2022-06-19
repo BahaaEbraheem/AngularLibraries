@@ -13,16 +13,36 @@ export class AddBookComponent implements OnInit {
 
   constructor(public Myservice:BookService) { }
   ngOnInit() {
-   
+   this.Myservice.book={
+     Id:0,
+     Title:'',
+     AuthorName:'',
+     TotalPages:0,
+IsDeleted:false,
+Language:'',
+Price:0
+   }
   }
-  submit(from: NgForm){
-    this.Myservice.AddBook().subscribe(res=>{
-this.Myservice.GetAllBook();
+  
+  submit(from: NgForm) :void{
+    if (this.Myservice.book.Id==0) {
+      this.Myservice.AddBook().subscribe(res=>{
+        this.Myservice.GetAllBooks();
+            }
+              ,err=>{
+        console.log(err);
+              }
+              );
+    }else{
+      this.Myservice.UpdateBook().subscribe(res=>{
+        this.Myservice.GetAllBooks();
+            }
+              ,err=>{
+        console.log(err);
+              }
+              );
     }
-      ,err=>{
-console.log(err);
-      }
-      );
+  
     
   }
   

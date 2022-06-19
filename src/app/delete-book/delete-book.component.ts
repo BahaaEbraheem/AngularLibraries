@@ -15,7 +15,7 @@ export class DeleteBookComponent implements OnInit {
   }
   submit(from: NgForm){
     this.Myservice.DeleteBook().subscribe(res=>{
-this.Myservice.GetAllBook();
+this.Myservice.GetAllBooks();
     }
       ,err=>{
 console.log(err);

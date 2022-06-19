@@ -8,24 +8,25 @@ import { Book } from './book.model';
 
 
 export class BookService {
-  
+
   constructor(private http: HttpClient) { }
 
-urlAdd:string="https://localhost:44362/api/BookDetails/AddBook";
-  url: string = "https://localhost:44362/api/BookDetails/GetAllBooks";
-  urlDel: string = "https://localhost:44362/api/BookDetails/DeleteBook";
+  url: string = "https://localhost:44362/api/BookDetails/";
   books!: Book[];
   book: Book = new Book;
 
-   GetAllBook() {
-    this.http.get(this.url).subscribe(res=>{
-    this.books=res as Book[];
-    })}
-      public AddBook() {
-        return this.http.post(this.urlAdd ,this. book);
-    }
-    DeleteBook(){
-      return this.http.delete(this.urlDel+'?' +"title="+this.book.Title+'&'+"authorName="+this.book.AuthorName);
-    }
-
+  GetAllBooks() {
+    this.http.get(this.url +"GetAllBooks").subscribe(res => {
+      this.books = res as Book[];
+    })
+  }
+  public AddBook() {
+    return this.http.post(this.url+"AddBook", this.book);
+  }
+  DeleteBook() {
+    return this.http.delete(this.url+"DeleteBook" + '?' + "title=" + this.book.Title + '&' + "authorName=" + this.book.AuthorName);
+  }
+  UpdateBook() {
+    return this.http.put(this.url + this.book.Id, this.book);
+  }
 }

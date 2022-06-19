@@ -2,10 +2,10 @@ export class Book {
   Id!: number;
   Title!: string;
   TotalPages!: number
-  Price!: Float32Array;
-  PublishedDate!: Date;
+  Price!: number;
+  PublishedDate?: Date;
   AuthorName!: string;
   Language!: string;
-  CreatedOn!: Date;
+  CreatedOn?: Date;
   IsDeleted!: boolean;
 }

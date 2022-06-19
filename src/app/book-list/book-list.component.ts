@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Book } from '../book.model';
 import { BookService } from '../book.service';
 
 @Component({
@@ -11,7 +12,17 @@ export class BookListComponent implements OnInit {
   constructor(public Myservice:BookService) { }
 
   ngOnInit(): void {
-    this.Myservice.GetAllBook();
+    this.Myservice.GetAllBooks();
   }
+  FillData(item:Book){
+    this.Myservice.book.Id=item.Id;
+    this.Myservice.book.Title=item.Title;
+    this.Myservice.book.AuthorName=item.AuthorName;
+    this.Myservice.book.Price=item.Price;
+    this.Myservice.book.TotalPages=item.TotalPages;
+    this.Myservice.book.PublishedDate=item.PublishedDate;
+    this.Myservice.book.Language=item.Language;
+    this.Myservice.book.CreatedOn=item.CreatedOn;
 
+  }
 }
