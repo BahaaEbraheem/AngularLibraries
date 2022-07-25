@@ -1,0 +1,15 @@
+<form class="form-signin" #loginform="ngForm" (ngSubmit)="Login(loginform)">
+<div class="container-fluid">
+<h2 class="form-signin-heading">Login</h2>
+<div class="alert alert-danger" *ngIf="invalidlogin" >Invalid UserName or Password</div>
+<br>
+<label for="UserName" class="sr-only"> UserName</label>
+<input id="UserName" name="UserName" class="form-control" ngModel placeholder="UserName......." required autofocus>
+<br>
+<label for="Password" class="sr-only"> Password</label>
+<input id="Password" name="Password" class="form-control" ngModel placeholder="Password......." required >
+<br>
+<button type="submit"> submit</button>
+</div>
+
+</form> 
