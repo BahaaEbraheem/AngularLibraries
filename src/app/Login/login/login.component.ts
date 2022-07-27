@@ -15,10 +15,10 @@ export class LoginComponent implements OnInit {
 
 invalidlogin:boolean | undefined;
   constructor(public Myservice:LoginService,private router:Router,private http: HttpClient) { }
-Login(loginform:NgForm){
+Login(form:NgForm){
 const credintials={
-  'UserName':loginform.value.UserName,
-  'Password':loginform.value.Password,
+  'UserName':form.value.UserName,
+  'Password':form.value.Password,
 }
 this.http.post(this.url, credintials).subscribe(response=>{
   const token=(<any>response).token;

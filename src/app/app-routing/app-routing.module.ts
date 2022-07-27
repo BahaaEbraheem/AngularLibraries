@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AddBookComponent } from '../add-book/add-book.component';
 import { LoginComponent } from '../Login/login/login.component';
 import { BookListComponent } from '../book-list/book-list.component';
+import { HomeComponent } from '../Home/home/home.component';
 
 
 const routes: Routes = [
@@ -18,11 +19,15 @@ const routes: Routes = [
       pathMatch:'full'
     },
     {
-      path:'',
+      path:'Login',
       component:LoginComponent,
       pathMatch:'full'
-    }
-  ,
+    },    {
+      path:'',
+      component:HomeComponent,
+      pathMatch:'full'
+    },
+  
   ];
 
   @NgModule({

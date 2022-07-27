@@ -5,11 +5,17 @@ import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { DeleteBookComponent } from './delete-book/delete-book.component';
-import { CommonModule } from '@angular/common';
-import { RouterModule, Routes } from '@angular/router';
 import { AddBookComponent } from './add-book/add-book.component';
 import { LoginComponent } from './Login/login/login.component';
 import { BookListComponent } from './book-list/book-list.component';
+import { JwtModule } from '@auth0/angular-jwt';
+import { HomeComponent } from './Home/home/home.component';
+
+
+
+export function tokenGetter(){
+ return localStorage.getItem("jwt");
+}
 
 @NgModule({
   declarations: [
@@ -18,7 +24,7 @@ import { BookListComponent } from './book-list/book-list.component';
     AddBookComponent,
     DeleteBookComponent,
     LoginComponent,
-    
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,6 +32,13 @@ import { BookListComponent } from './book-list/book-list.component';
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
+  JwtModule.forRoot({
+    config:{
+      tokenGetter:tokenGetter,
+      allowedDomains:["localhost:5001"],
+      disallowedRoutes:[""]
+     }
+  })
   ],
   providers: [],
   bootstrap: [AppComponent]

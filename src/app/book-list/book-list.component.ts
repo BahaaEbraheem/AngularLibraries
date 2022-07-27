@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Book } from '../book.model';
 import { BookService } from '../book.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-book-list',
@@ -9,10 +10,14 @@ import { BookService } from '../book.service';
 })
 export class BookListComponent implements OnInit {
 
-  constructor(public Myservice:BookService) { }
+  constructor(public Myservice:BookService,private router:Router) { }
 
   ngOnInit(): void {
     this.Myservice.GetAllBooks();
+  }
+  logout(){
+    localStorage.removeItem("jwt");
+    this.router.navigateByUrl("");
   }
   FillData(item:Book){
     this.Myservice.book.Id=item.Id;
