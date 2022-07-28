@@ -11,10 +11,12 @@ export class HomeComponent implements OnInit {
   IsUserAuthenticate() {
     const token = localStorage.getItem("jwt");
     if (token){
-      this.router.navigateByUrl('/booklist')
+      // this.router.navigateByUrl('/booklist');
+      return true;
     }
     else{
-      this.router.navigateByUrl('/Login')
+      // this.router.navigateByUrl('/Login')
+      return false;
     }
 
   }

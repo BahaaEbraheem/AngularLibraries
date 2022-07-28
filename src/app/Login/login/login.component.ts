@@ -24,7 +24,7 @@ this.http.post(this.url, credintials).subscribe(response=>{
   const token=(<any>response).token;
   localStorage.setItem("jwt",token);
   this.invalidlogin=false;
-  this.router.navigateByUrl('/booklist');
+  this.router.navigateByUrl('');
   
 }
 ,err=>{

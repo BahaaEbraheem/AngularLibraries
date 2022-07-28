@@ -1,7 +1,7 @@
 <div class="container">
     <h1 class="row" >Welcom</h1>
-
-    <a class="row" [routerLink]="[]"  (click)="IsUserAuthenticate()" >Books</a>
-    <a class="row"  routerLink="Login">Login</a>
+    <h1 *ngIf="IsUserAuthenticate()"> You Are Logging</h1>
+   <h2><a class="row" routerLink="booklist" >Books</a></h2> 
+    <h2><a class="row"  routerLink="Login">Login</a></h2>
 
 </div>

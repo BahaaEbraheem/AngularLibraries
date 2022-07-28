@@ -10,6 +10,7 @@ import { LoginComponent } from './Login/login/login.component';
 import { BookListComponent } from './book-list/book-list.component';
 import { JwtModule } from '@auth0/angular-jwt';
 import { HomeComponent } from './Home/home/home.component';
+import { AuthGuardServiceService } from './auth-guard-service.service';
 
 
 
@@ -35,12 +36,12 @@ export function tokenGetter(){
   JwtModule.forRoot({
     config:{
       tokenGetter:tokenGetter,
-      allowedDomains:["localhost:5001"],
+      allowedDomains:["localhost:5001","localhost:4200"],
       disallowedRoutes:[""]
      }
   })
   ],
-  providers: [],
+  providers: [AuthGuardServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
