@@ -12,7 +12,7 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { HomeComponent } from './Home/home/home.component';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './Guard/guards/auth.guard';
-import { CustomersComponent } from './Customers/customers.component';
+import { CustomersComponent } from './customers/customers.component';
 
 
 
