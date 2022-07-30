@@ -5,7 +5,6 @@ import { AddBookComponent } from '../add-book/add-book.component';
 import { LoginComponent } from '../Login/login/login.component';
 import { BookListComponent } from '../book-list/book-list.component';
 import { HomeComponent } from '../Home/home/home.component';
-import { AuthGuardServiceService } from '../auth-guard-service.service';
 
 
 const routes: Routes = [
@@ -18,7 +17,6 @@ const routes: Routes = [
       path:'booklist',
       component:BookListComponent,
       pathMatch:'full',
-      canActivate:[AuthGuardServiceService]
     },
     {
       path:'Login',

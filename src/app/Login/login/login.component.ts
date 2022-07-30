@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { LoginService } from 'src/app/login.service';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -10,11 +11,12 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent  {
   url: string = 'https://localhost:44362/api/Auth/login';
 
 invalidlogin:boolean | undefined;
   constructor(public Myservice:LoginService,private router:Router,private http: HttpClient) { }
+
 Login(form:NgForm){
 const credintials={
   'UserName':form.value.UserName,
@@ -31,7 +33,6 @@ this.http.post(this.url, credintials).subscribe(response=>{
   this.invalidlogin=true;
 })     
 }
-  ngOnInit(): void {
-  }
 
+ 
 }

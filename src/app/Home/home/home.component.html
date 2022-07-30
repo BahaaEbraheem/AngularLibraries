@@ -1,7 +1,9 @@
 <div class="container">
     <h1 class="row" >Welcom</h1>
     <h1 *ngIf="IsUserAuthenticate()"> You Are Logging</h1>
-   <h2><a class="row" routerLink="booklist" >Books</a></h2> 
-    <h2><a class="row"  routerLink="Login">Login</a></h2>
+   <h2><a class="row" routerLink="customers"  >customers</a></h2> 
+   <h2><a class="row" routerLink="booklist"  >BooksList</a></h2> 
+    <h2><a *ngIf="!IsUserAuthenticate()" class="row"  routerLink="Login">Login</a></h2>
+    <button *ngIf="IsUserAuthenticate()" (click)="logout()">logout</button>
 
 </div>
