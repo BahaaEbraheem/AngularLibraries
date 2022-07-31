@@ -12,13 +12,13 @@ export class BookService {
   constructor(private http: HttpClient) { }
 
   url: string = "https://localhost:44362/api/BookDetails/";
+  book:Book=new Book
   books!: Book[];
-  book: Book = new Book;
 
-  GetAllBooks() {
-    this.http.get(this.url +"GetAllBooks").subscribe(res => {
-      this.books = res as Book[];
-    })
+    GetAllBooks() {
+      return  this.http.get(this.url +"GetAllBooks").subscribe(res => {
+    this.books = res as Book[];
+  })
   }
   public AddBook() {
     return this.http.post(this.url+"AddBook", this.book);

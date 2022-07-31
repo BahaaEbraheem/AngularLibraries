@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Book } from '../book.model';
 import { BookService } from '../book.service';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
@@ -10,16 +10,18 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./book-list.component.css']
 })
 export class BookListComponent  {
-  books!: Book[];
+  // books!: Book[];
   book: Book = new Book;
+  @Input() books!: Book[];
   constructor(public Myservice: BookService, private router: Router,private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.Myservice.GetAllBooks();
+   this.Myservice.GetAllBooks();
 
   }
 
-  
+
+
   FillData(item: Book) {
     this.Myservice.book.Id = item.Id;
     this.Myservice.book.Title = item.Title;
